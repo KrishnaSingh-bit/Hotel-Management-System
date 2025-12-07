@@ -8,7 +8,7 @@ print('\t---WELCOME TO BANK MANAGEMENT SYSTEM---\n')
 # ======================= USER FUNCTIONS =======================
 
 def view_data():
-    dbo = con.connect(host='localhost', user='root', password='sqlKrishna', database="bank_management_system")
+    dbo = con.connect(host='localhost', user='root', password='password', database="bank_management_system")
     cu = dbo.cursor()
     number = int(input('Enter the account number: '))
     query = "SELECT * FROM acct_holder WHERE acc_no=%s"
@@ -31,7 +31,7 @@ def view_data():
 
 
 def update_name():
-    dbo = con.connect(host='localhost', user="root", password='sqlKrishna', database='bank_management_system')
+    dbo = con.connect(host='localhost', user="root", password='password', database='bank_management_system')
     cu = dbo.cursor()
     holder = input('Enter the updated name: ')
     number = int(input('Enter the account number: '))
@@ -319,3 +319,4 @@ while True:
     elif inp == 3:
         print("Thank you for using the Bank Management System!")
         break
+
