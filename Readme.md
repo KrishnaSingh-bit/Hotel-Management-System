@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS loan_acct (
     loan_type VARCHAR(50),
     status_of_loan ENUM('cleared','pending') DEFAULT 'pending',
     number_of_months_from_which_interest_is_not_paid INT DEFAULT 0,
-    FOREIGN KEY (acct_no) REFERENCES acct_holder(acc_no) ON DELETE CASCADE
+    FOREIGN KEY (acc_no) REFERENCES acct_holder(acc_no) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS feedback (
@@ -130,5 +130,6 @@ bank-management-system/
 This project is licensed under the MIT License.
 
 ---
+
 
 
