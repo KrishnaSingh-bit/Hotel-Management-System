@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS admin_data (
 );
 
 CREATE TABLE IF NOT EXISTS loan_acct (
-    acct_no BIGINT NOT NULL,
+    acc_no BIGINT NOT NULL,
     name VARCHAR(100) NOT NULL,
     loan_amount INT NOT NULL,
     loan_type VARCHAR(50),
@@ -130,4 +130,5 @@ bank-management-system/
 This project is licensed under the MIT License.
 
 ---
+
 
