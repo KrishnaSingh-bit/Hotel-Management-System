@@ -8,7 +8,7 @@ print('\t---WELCOME TO BANK MANAGEMENT SYSTEM---\n')
 # ======================= USER FUNCTIONS =======================
 
 def view_data():
-    dbo = con.connect(host='localhost', user='root', password='password', database="bank_management_system")
+    dbo = con.connect(host='localhost', user='root', password='sqlKrishna', database="bank_management_system")
     cu = dbo.cursor()
     number = int(input('Enter the account number: '))
     query = "SELECT * FROM acct_holder WHERE acc_no=%s"
@@ -31,7 +31,7 @@ def view_data():
 
 
 def update_name():
-    dbo = con.connect(host='localhost', user="root", password='password', database='bank_management_system')
+    dbo = con.connect(host='localhost', user="root", password='sqlKrishna', database='bank_management_system')
     cu = dbo.cursor()
     holder = input('Enter the updated name: ')
     number = int(input('Enter the account number: '))
@@ -45,7 +45,7 @@ def update_name():
 
 
 def update_email():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     email = input("Enter the updated email: ")
     number = int(input("Enter the account number: "))
@@ -59,7 +59,7 @@ def update_email():
 
 
 def update_phone_number():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     phone = input("Enter the updated phone number: ")
     number = int(input("Enter the account number: "))
@@ -73,7 +73,7 @@ def update_phone_number():
 
 
 def update_address():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     address = input("Enter the updated address: ")
     number = int(input("Enter the account number: "))
@@ -87,7 +87,7 @@ def update_address():
 
 
 def give_feedback():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     number = int(input("Enter your account number: "))
     feed = input("Enter your feedback:\n")
@@ -101,10 +101,10 @@ def give_feedback():
 
 
 def view_loan_status():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     number = int(input("Enter your account number: "))
-    query = "SELECT * FROM loan_acct WHERE acct_no=%s"
+    query = "SELECT * FROM loan_acct WHERE acc_no=%s"
     cu.execute(query, (number,))
     data = cu.fetchone()
     if data:
@@ -124,7 +124,7 @@ def view_loan_status():
 # ======================= ADMIN FUNCTIONS =======================
 
 def add_data():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
 
     name = input("Enter the name: ")
@@ -158,7 +158,7 @@ def add_data():
 
 
 def view_loan_details():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     cu.execute("SELECT * FROM loan_acct")
     rows = cu.fetchall()
@@ -173,18 +173,18 @@ def view_loan_details():
 
 
 def update_status_loan():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     number = int(input("Enter account number: "))
     stat = input("Enter loan status (cleared/pending): ")
-    query = "UPDATE loan_acct SET status_of_loan=%s WHERE acct_no=%s"
+    query = "UPDATE loan_acct SET status_of_loan=%s WHERE acc_no=%s"
     cu.execute(query, (stat, number))
     dbo.commit()
     print("Loan status updated!")
 
 
 def status_loan_defaulters():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     m = int(input("Enter minimum months unpaid: "))
     query = "SELECT * FROM loan_acct WHERE number_of_months_from_which_interest_is_not_paid >= %s"
@@ -201,7 +201,7 @@ def status_loan_defaulters():
 
 
 def add_data_loan():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     a = int(input("Enter account number: "))
     n = input("Enter name: ")
@@ -216,7 +216,7 @@ def add_data_loan():
 
 
 def view_feedback():
-    dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+    dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
     cu = dbo.cursor()
     cu.execute("SELECT * FROM feedback")
     rows = cu.fetchall()
@@ -293,7 +293,7 @@ while True:
     if inp == 1:
         user = input("Enter username: ")
         pasw = input("Enter password: ")
-        dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+        dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
         cu = dbo.cursor()
         cu.execute("SELECT * FROM admin_data")
         for data in cu:
@@ -306,7 +306,7 @@ while True:
     elif inp == 2:
         user = input("Enter username: ")
         pasw = input("Enter password: ")
-        dbo = con.connect(host="localhost", user="root", password="password", database="bank_management_system")
+        dbo = con.connect(host="localhost", user="root", password="sqlKrishna", database="bank_management_system")
         cu = dbo.cursor()
         cu.execute("SELECT * FROM user_data")
         for data in cu:
@@ -319,4 +319,3 @@ while True:
     elif inp == 3:
         print("Thank you for using the Bank Management System!")
         break
-
