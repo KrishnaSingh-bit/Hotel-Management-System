@@ -1,6 +1,5 @@
 # BANK MANAGEMENT SYSTEM
 import mysql.connector as con
-import random
 
 print('\t---WELCOME TO BANK MANAGEMENT SYSTEM---\n')
 
@@ -264,6 +263,7 @@ def user1():
     print("5. Update address")
     print("6. Give feedback")
     print("7. View loan status")
+    print("8. Exit")
     ch = int(input("Enter your choice: "))
     if ch == 1:
         view_data()
@@ -319,3 +319,4 @@ while True:
     elif inp == 3:
         print("Thank you for using the Bank Management System!")
         break
+
